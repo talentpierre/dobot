@@ -1,6 +1,5 @@
 Role Name: install_motion
 =========================
 
-- aktualisiert paketlisten
-- installiert motion und einige andere pakete, falls motion selbst kompiliert werden soll
-
+- update packages
+- installs motion and some other libraries in case someone wants to compile motion
