@@ -1,12 +1,12 @@
 ---
 # tasks file for prepare_flask
 
-- name: Paketlisten aktualisieren
+- name: update packages
   apt:
     update_cache: yes
     cache_valid_time: 3600
 
-- name: pip installieren
+- name: install pip
   become: true
   apt:
     name: python-pip
