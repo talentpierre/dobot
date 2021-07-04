@@ -1,0 +1,14 @@
+[hosts]
+pi_1 ansible_host=192.168.100.107
+
+[pi_hosts]
+pi_1 
+
+
+[pi_hosts:vars]
+ansible_user=pi
+ansible_become=yes
+
+[hosts:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'

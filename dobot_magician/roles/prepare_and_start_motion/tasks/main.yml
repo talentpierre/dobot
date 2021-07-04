@@ -1,0 +1,61 @@
+---
+# tasks file for prepare_and_start_motion
+
+- name: daemon on in motion.conf
+  become: true
+  lineinfile:
+    path: /etc/motion/motion.conf
+    regexp: '^daemon off'
+    line: 'daemon on'
+
+- name: stream_localhost off in motion.conf
+  become: true
+  lineinfile:
+    path: /etc/motion/motion.conf
+    regexp: '^stream_localhost'
+    line: 'stream_localhost off'
+
+- name: change max stream rate in motion.conf
+  become: true
+  lineinfile:
+    path: /etc/motion/motion.conf
+    regexp: '^stream_maxrate'
+    line: 'stream_maxrate 15'
+
+- name: change framerate in motion.conf
+  become: true
+  lineinfile:
+    path: /etc/motion/motion.conf
+    regexp: '^framerate'
+    line: 'framerate 15'
+
+- name: change width in motion.conf
+  become: true
+  lineinfile:
+    path: /etc/motion/motion.conf
+    regexp: '^width'
+    line: 'width 320'
+
+- name: change height in motion.conf
+  become: true
+  lineinfile:
+    path: /etc/motion/motion.conf
+    regexp: '^height'
+    line: 'height 240'
+
+- name: setup daemon in motion file
+  become: true
+  lineinfile:
+    path: /etc/default/motion
+    regexp: '^start_motion_daemon'
+    line: 'start_motion_daemon=yes'
+
+- name: start motion service
+  become: true
+  ansible.builtin.systemd:
+    name: motion
+    state: started
+    enabled: yes
+
+- name: reboot system
+  reboot:

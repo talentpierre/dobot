@@ -1,0 +1,32 @@
+---
+# tasks file for install_motion
+
+- name: Paketlisten aktualisieren
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: motion installieren
+  become: true
+  apt:
+    name:
+      - motion
+      - autoconf
+      - build-essential
+      - pkgconf
+      - libtool
+      - git
+      - libzip-dev
+      - libjpeg-dev
+      - gettext
+      - libmicrohttpd-dev
+      - libavformat-dev
+      - libavcodec-dev
+      - libavutil-dev
+      - libswscale-dev
+      - libavdevice-dev
+      - default-libmysqlclient-dev
+      - libsqlite3-dev
+      - libwebp-dev
+
+
