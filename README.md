@@ -1,4 +1,4 @@
-# dobot
+# dobot - for RaspberryPi
 
 ### start
 
