@@ -1,5 +1,9 @@
 # dobot - for RaspberryPi
 
+### description
+
+creates a webserver with motion and flask
+
 ### start
 
 ####  1. install ansible on control host
