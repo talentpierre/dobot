@@ -1,12 +1,12 @@
 ---
 # tasks file for install_motion
 
-- name: Paketlisten aktualisieren
+- name: update packages
   apt:
     update_cache: yes
     cache_valid_time: 3600
 
-- name: motion installieren
+- name: install motion 
   become: true
   apt:
     name:
