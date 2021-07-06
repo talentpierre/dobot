@@ -1,4 +1,8 @@
-# dobot
+# dobot - for RaspberryPi
+
+### description
+
+creates a webserver with motion and flask
 
 ### start
 
