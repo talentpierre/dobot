@@ -32,7 +32,7 @@
 
 - name: copy flask file
   copy:
-    src: flask_test.py
+    src: flask
     dest: /home/pi/
     owner: pi
     group: pi

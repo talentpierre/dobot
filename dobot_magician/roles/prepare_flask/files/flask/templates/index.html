@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dobot Web-Server</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		
+		<style>
+			
+			.container{
+				min-width 300px;
+				padding: 0px
+				
+			}
+			
+			.panel{
+				height: 290px;
+				width: 320px;
+				margin: 20px auto;
+			}
+			
+			.panel-body{
+				padding: 0px;
+			}
+			.container_intern{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;		
+				padding: 10px 10% 0px 10%;
+			}
+			
+			.button-row{
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+			}
+			
+			.button-row2{
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+			}
+			
+			.button-row:nth-child(1){
+				justify-content: center;
+			}
+			
+			.button-row:nth-child(3){
+				justify-content: center;
+			}
+			
+			.image_box{
+				position: relative;
+				margin-top: 20px;
+				display: block;
+			}
+			
+			.image_box img{
+				margin: 0px auto 0px auto;
+				display: block;
+				border-radius: 4px;
+				width: 280px;
+				height: 210px
+			}
+			
+			h2{
+				text-align: center;
+				padding: 15px;
+			}
+			
+			
+			
+			
+		</style>
+	</head>
+	
+    <body>
+	
+		<h2> Dobot Web-Server</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-6 mb-4">
+					<div id="panel_1" class="panel panel-default">
+					
+						<div class="panel-heading">
+						  <h3 class="panel-title">Camera</h3>
+						</div>
+
+						<div class="panel-body">
+							<div class="image_box">
+								<img src="http://192.168.100.107:8081/">
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="col-12 col-sm-12 col-md-6 mb-4">
+					<div id="panel_2" class="panel panel-default">
+					
+						<div class="panel-heading">
+						  <h3 class="panel-title">Steuerung <span id="span_id_1">1000</span> </h3>
+						</div>
+
+						<div class="panel-body">
+							<div class="form-inline">
+						  
+								<div class="container_intern">
+								
+									<div class="button-row">
+										<div class="button_order">
+											<button class="btn btn-primary upButton" member_id="1">Up</button>
+										</div>
+									</div>
+									
+									<div class="button-row">
+										<div class="button_order">
+											<button class="btn btn-primary leftButton" member_id="2">Left</button>
+										</div>
+										
+										<div class="button_order">
+											<button class="btn btn-primary rightButton" member_id="3">Right</button>
+										</div>
+									</div>
+									
+									<div class="button-row">
+										<div class="button_order">
+											<button class="btn btn-primary downButton" member_id="4">Down</button>
+										</div>
+									</div>
+									
+									<div class="button-row">
+										<div class="button_order">
+											<button class="btn btn-primary forwardButton" member_id="5">Forward</button>
+										</div>
+										<div class="button_order">
+											<button class="btn btn-primary backwardButton" member_id="6">Backward</button>
+										</div>
+									</div>
+								
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!--		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  -->
+		<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+    </body>
+</html>
