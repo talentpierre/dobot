@@ -10,7 +10,7 @@ creates a webserver with motion and flask
 ####  2. use ssh-copy-id to transfer your public keys to your target host
 ####  3. set variable for ansible.cfg file in your .bashrc
 ```sh
-export ANSIBLE_CONFIG=~/dobot/dobot_magician/ansible.cfg file
+echo 'export ANSIBLE_CONFIG=~/dobot/dobot_magician/ansible.cfg' >> ~/.bashrc 
 ```
 ####  4. change ipaddress in the inventory file to match your target host or add more target hosts
 ####  5. run playbook 
