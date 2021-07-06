@@ -21,7 +21,8 @@ ansible-playbook --ask-become-pass setup_dobot_webserver.yml
 ####  6. get some coffee and wait
 ####  7. log in your target host and run flask
 ```sh
-python3 flask_test.py
+cd ~/flask
+python3 app.py
 ```
 ####  8. check if everything works
 - type in `target host ip address`:`port` in your webbrowser
