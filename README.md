@@ -29,7 +29,11 @@ ansible-playbook --ask-become-pass setup_dobot_webserver.yml
 ```sh
 nano /etc/nginx/sites-available/dobot
 ```
-####  8. check if everything works
+####  8. log in your target host and change ip in html file
+```sh
+nano ~/dobot/dobot_magician/roles/dobot_webserver/files/flask/templates/index.html
+```
+####  9. check if everything works
 - type in `target host ip address` in your webbrowser
 - eg. 
 ```sh 
