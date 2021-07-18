@@ -1,0 +1,27 @@
+---
+
+- name: copy flask app into directory
+  copy:
+    src: flask/
+    dest: /home/pi/dobot/
+
+- name: copy wsgi endpoint
+  copy:
+    src: wsgi.py
+    dest: /home/pi/dobot/wsgi.py
+
+- name: create gunicorn service
+  become: true
+  copy:
+    src: dobot.service
+    dest: /etc/systemd/system/dobot.service
+
+- name: enable start on boot for gunicorn
+  become: true
+  systemd:
+    name: dobot.service
+    state: started
+    enabled: yes
+
+- name: reboot
+  reboot:

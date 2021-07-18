@@ -1,0 +1,27 @@
+---
+
+- name: download nginx
+  become: true
+  apt:
+    name: nginx
+
+- name: create server block
+  become: true
+  copy:
+    src: dobot
+    dest: /etc/nginx/sites-available/
+
+- name: create symlink
+  become: true
+  file:
+    src: /etc/nginx/sites-available/dobot
+    dest: /etc/nginx/sites-enabled/dobot
+    state: link
+
+- name: restart nginx
+  become: true
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
+

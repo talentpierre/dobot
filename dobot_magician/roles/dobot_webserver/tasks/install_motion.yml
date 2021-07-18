@@ -1,12 +1,5 @@
 ---
-# tasks file for install_motion
-
-- name: update packages
-  apt:
-    update_cache: yes
-    cache_valid_time: 3600
-
-- name: install motion 
+- name: motion installieren
   become: true
   apt:
     name:
@@ -28,5 +21,4 @@
       - default-libmysqlclient-dev
       - libsqlite3-dev
       - libwebp-dev
-
 

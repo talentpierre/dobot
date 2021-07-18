@@ -1,0 +1,8 @@
+---
+# tasks file for dobot_webserver
+
+- import_tasks: install_motion.yml
+- import_tasks: configure_motion.yml
+- import_tasks: prepare_virtualenv.yml
+- import_tasks: configure_flask_gunicorn.yml
+- import_tasks: install_configure_nginx.yml

@@ -1,0 +1,46 @@
+---
+
+- name: install dependencies
+  become: true
+  apt:
+    name:
+      - python3-pip
+      - python3-dev
+      - build-essential
+      - libssl-dev
+      - libffi-dev
+      - python3-setuptools
+
+- name: install virtual env
+  become: true
+  apt:
+    name: python3-venv
+
+- name: create project directory
+  file:
+    path: /home/pi/dobot
+    state: directory
+    mode: '0755'
+    owner: pi
+    group: pi
+
+- name: create virtual env
+  shell:
+    cmd: python3 -m venv dobotenv
+    chdir: /home/pi/dobot/
+
+- name: install wheel
+  become: true
+  pip:
+    name:
+      wheel
+
+- name: install flask and gunicorn into venv
+  pip:
+    name:
+      - flask
+      - gunicorn
+      - gpiozero
+      - RPi.GPIO
+    virtualenv: /home/pi/dobot/dobotenv
+    virtualenv_python: python3

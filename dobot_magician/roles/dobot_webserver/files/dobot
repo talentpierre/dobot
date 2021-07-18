@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name 192.168.100.107 www.192.168.100.107;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/pi/dobot/dobot.sock;
+    }
+}
