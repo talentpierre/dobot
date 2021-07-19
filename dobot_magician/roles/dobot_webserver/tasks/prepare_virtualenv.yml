@@ -33,7 +33,8 @@
   become: true
   pip:
     name:
-      wheel
+      - wheel
+      - pyserial
 
 - name: install flask and gunicorn into venv
   pip:
@@ -42,5 +43,6 @@
       - gunicorn
       - gpiozero
       - RPi.GPIO
+      - pyserial
     virtualenv: /home/pi/dobot/dobotenv
     virtualenv_python: python3
