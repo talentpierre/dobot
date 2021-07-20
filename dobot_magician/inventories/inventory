@@ -1,5 +1,5 @@
 [hosts]
-pi_1 ansible_host=192.168.100.107
+pi_1 ansible_host=192.168.193.165
 
 [pi_hosts]
 pi_1 

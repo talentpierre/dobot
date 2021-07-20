@@ -6,8 +6,8 @@ After=network.target
 User=pi
 Group=www-data
 WorkingDirectory=/home/pi/dobot
-Environment="PATH=/home/pi/dobot/dobotenv/bin"
-ExecStart=/home/pi/dobot/dobotenv/bin/gunicorn --workers 3 --bind unix:dobot.sock -m 007 wsgi:app
+#Environment="PATH=/home/pi/dobot/dobotenv/bin"
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind unix:dobot.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target

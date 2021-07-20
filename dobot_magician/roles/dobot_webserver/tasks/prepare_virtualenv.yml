@@ -11,11 +11,6 @@
       - libffi-dev
       - python3-setuptools
 
-- name: install virtual env
-  become: true
-  apt:
-    name: python3-venv
-
 - name: create project directory
   file:
     path: /home/pi/dobot
@@ -24,25 +19,14 @@
     owner: pi
     group: pi
 
-- name: create virtual env
-  shell:
-    cmd: python3 -m venv dobotenv
-    chdir: /home/pi/dobot/
-
-- name: install wheel
+- name: install pip packages
   become: true
   pip:
     name:
       - wheel
       - pyserial
-
-- name: install flask and gunicorn into venv
-  pip:
-    name:
       - flask
       - gunicorn
       - gpiozero
       - RPi.GPIO
-      - pyserial
-    virtualenv: /home/pi/dobot/dobotenv
-    virtualenv_python: python3
+
