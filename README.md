@@ -24,7 +24,7 @@ use flag `--ask-become-pass` to get prompted for root password
 ```sh
 ansible-playbook --ask-become-pass setup_dobot_webserver.yml
 ```
-####  6. get some coffee and wait
+####  6. get some non-alcoholic, vegan tea and wait
 ####  7. log in your target host and change ip in nginx config file
 ```sh
 nano /etc/nginx/sites-available/dobot
