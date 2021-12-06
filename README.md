@@ -27,7 +27,7 @@ nano ~/dobot/dobot_magician/inventories/inventory
 ####  6. run playbook 
 use flag `--ask-become-pass` to get prompted for root password        
 ```sh
-ansible-playbook --ask-become-pass setup_dobot_webserver.yml
+ansible-playbook --ask-become-pass ~/dobot/dobot_magician/playbooks/setup_dobot_webserver.yml
 ```
 ####  7. get some coffee and wait
 :coffee:
