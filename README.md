@@ -37,7 +37,7 @@ nano /etc/nginx/sites-available/dobot
 ```
 ####  9. log in your target host and change ip in html file
 ```sh
-nano ~/dobot/dobot_magician/roles/dobot_webserver/files/flask/templates/index.html
+nano ~/dobot/templates/index.html
 ```
 ####  10. check if everything works
 - open `target host ip address` in your webbrowser
